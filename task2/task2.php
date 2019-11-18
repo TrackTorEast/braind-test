@@ -34,9 +34,10 @@
 					$commitCnt += 1;
 					$wrnCnt += 1;
 				}
-				$commitCnt += $wrnCnt/2;
-				$errCnt += $wrnCnt/2;
-
+				// Исправим ворнинги
+				$commitCnt += $wrnCnt/2; 
+				$errCnt += $wrnCnt/2; 
+				// Исправим ошибки
 				$commitCnt += $errCnt/2;
 			}
 			// Если ворнингов нет, то собственно всё
@@ -60,9 +61,10 @@
 					$commitCnt += 1;
 					$wrnCnt += 1;
 				}
+				// Исправим ворнинги
 				$commitCnt += $wrnCnt/2;
 				$errCnt += $wrnCnt/2;
-
+				// Исправим ошибки
 				$commitCnt += $errCnt/2;
 			}
 		}
@@ -78,7 +80,7 @@
 		$k = $_POST['warnings'];
 
 		if ( ($n>=0) && ($k<=1000) ) {
-			echo trySolve($n, $k); // <- вызов основной функции
+			echo "Результат: " . trySolve($n, $k); // <- вызов основной функции
 		} else {
 			echo "Числа не удовлетворяют условию";
 		}
